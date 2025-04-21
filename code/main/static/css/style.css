@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.nav-tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #666;
+}
+
+.tab.active {
+    color: #000;
+    border-bottom: 2px solid #000;
+}
+
+.page {
+    display: none;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.page.active {
+    display: flex;
+}
+
+.video-section {
+    flex: 1;
+    min-width: 400px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.video-section img {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    object-fit: contain;
+    background: #f0f0f0;
+}
+
+.control-section {
+    width: 300px;
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 5px;
+}
+
+.slider-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.slider-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.slider-item input {
+    width: 100%;
+}
+
+.captured-section {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.captured-image-container {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background: #f0f0f0;
+    margin-bottom: 10px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.style-section {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.style-row {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.style-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.style-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    background: #f0f0f0;
+}
+
+button {
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
