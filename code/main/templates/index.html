@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>StyleGAN</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="main-title">StyleGan</h1>
+
+        <div class="nav-tabs">
+            <div class="tab active" data-page="style-mapping">实时style贴图</div>
+            <div class="tab" data-page="style-transform">实时变换风格</div>
+        </div>
+
+        <div class="content">
+            <!-- Style Mapping Page -->
+            <div id="style-mapping-page" class="page active">
+                <div class="video-section">
+                    <img src="{{ url_for('video_map') }}">
+                </div>
+                <div class="control-section">
+                    <div class="input-group">
+                        <input type="number" id="seed-input" placeholder="请输入一个正整数...">
+                        <button id="seed-btn">生成</button>
+                    </div>
+                    <div class="slider-group">
+                        <div class="slider-item">
+                            <label>头发</label>
+                            <input type="range" id="hair-slider" min="0" max="100">
+                        </div>
+                        <div class="slider-item">
+                            <label>胡子</label>
+                            <input type="range" id="beard-slider" min="0" max="100">
+                        </div>
+                        <div class="slider-item">
+                            <label>笑容</label>
+                            <input type="range" id="smile-slider" min="0" max="100">
+                        </div>
+                    </div>
+                    <br>
+                    <label>当前stylegan输出</label>
+                    <img src="{{ url_for('video_gan') }}">
+                </div>
+            </div>
+
+            <!-- Style Transform Page -->
+            <div id="style-transform-page" class="page">
+                <div class="video-section">
+                    <img src="{{ url_for('video_raw') }}">
+                </div>
+                <div class="control-section">
+                    <div class="captured-section">
+                        <div class="captured-image-container">
+                            <img id="captured-image" src="{{ url_for('captured_image') }}" alt="截取的图像">
+                        </div>
+                        <div class="button-group">
+                            <button id="capture-btn">截取</button>
+                            <button id="save-w-btn" disabled>种子发给贴图</button>
+                        </div>
+                    </div>
+                    <div class="style-section">
+                        <div class="style-row">
+                            <div class="style-item">
+                                <img src="" alt="风格1" class="style-source">
+                                <img src="" alt="风格1结果" class="style-result">
+                            </div>
+                            <div class="style-item">
+                                <img src="" alt="风格2" class="style-source">
+                                <img src="" alt="风格2结果" class="style-result">
+                            </div>
+                            <div class="style-item">
+                                <img src="" alt="风格3" class="style-source">
+                                <img src="" alt="风格3结果" class="style-result">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
